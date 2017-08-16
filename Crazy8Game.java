@@ -3,8 +3,38 @@ import java.util.Arrays;
 import java.util.Stack;
 import java.util.Random;
 
+//score marks
 public class Crazy8Game{
 
+	public static int handValue(ArrayList<Card> hand) {
+        int value = 0;
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i).getRankString().equals("Jack") || hand.get(i).getRankString().equals("Queen") || hand.get(i).getRankString().equals("King")) {
+                value = value + 10;
+            } else if (hand.get(i).getRankString().equals("Ace")) {
+                value = value + 1;
+            } else if (hand.get(i).getRankString().equals("8")) {
+                value = value + 50;
+            } else if (hand.get(i).getRankString().equals("2") || hand.get(i).getRankString().equals("4")) {
+                value = value + 25;
+            } else if (hand.get(i).getRankString().equals("7")) {
+                value = value + 20;
+            } else if (hand.get(i).getRankString().equals("3")) {
+                value = value + 3;
+            } else if (hand.get(i).getRankString().equals("5")) {
+                value = value + 5;
+            } else if (hand.get(i).getRankString().equals("6")) {
+                value = value + 6;
+            } else if (hand.get(i).getRankString().equals("9")) {
+                value = value + 9;
+            } else if (hand.get(i).getRankString().equals("10")) {
+                value = value + 10;
+            }
+        }
+        return value;
+    }
+	
+	
 	public static void main(String[] args){
 		
 		/* create the deck */
